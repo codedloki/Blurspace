@@ -24,6 +24,7 @@ Blurspace is a carefully crafted Linux desktop experience built on top of the **
 
 <p align="center">
   <img src="https://github.com/codedloki/Blurspace/blob/098e486f67daf05638261fc3a2ad74de3696f0b6/screenshots/menu.png" alt="Blurspace Screenshot" width="800"/>
+  <img src="https://github.com/codedloki/Blurspace/blob/098e486f67daf05638261fc3a2ad74de3696f0b6/screenshots/menu.png" alt="Blurspace Screenshot" width="800"/>
 </p>
 
 ---
