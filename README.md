@@ -1,62 +1,54 @@
-<h1 align="center">
-  🚀 Blurspace
-</h1>
+# 🚀 Blurspace
+
+> A futuristic and minimal i3 Window Manager rice with transparency-first aesthetics.
+
+Blurspace is a carefully crafted Linux desktop experience built on top of the **i3 window manager**, designed for users who value both performance and visual elegance. Featuring a transparent and glassy interface powered by `picom`, Blurspace combines speed, simplicity, and style into a seamless workflow environment.
+
+---
+
+## 🧊 Key Features
+
+- 🎛️ **Minimal i3WM Configuration**
+- 💠 **Transparent Blur Effects via Picom**
+- 🧩 **Themed Rofi, Dmenu, and i3bar**
+- 🌙 **Dark Mode + Futuristic Font Scheme**
+- ⚡ **Low Resource Usage, High Performance**
+- 🖼️ **Custom Wallpaper & Feh Integration**
+- 🔧 Optional ZSH and Vim theming
+
+---
+
+## 🖼️ Screenshots
+
+> _Preview the desktop environment in action. (Add your own images here)_
 
 <p align="center">
-  <img src="https://img.shields.io/badge/WindowManager-i3wm-blue?style=for-the-badge" alt="i3wm">
-  <img src="https://img.shields.io/badge/Transparency-Enabled-9cf?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Style-Minimalism-black?style=for-the-badge">
-</p>
-
-<p align="center">
-  <img src="https://github.com/codedloki/Blurspace/assets/preview.gif" alt="Blurspace Preview" style="border-radius: 12px;" />
+  <img src="https://github.com/codedloki/Blurspace/assets/blurspace-desktop-preview.png" alt="Blurspace Screenshot" width="800"/>
 </p>
 
 ---
 
-## 🧊 What is Blurspace?
+## ⚙️ Components & Tools
 
-**Blurspace** is a ⚡️ minimalist, transparent-themed Linux rice built on top of the legendary **i3 window manager**.  
-Designed to look slick, feel lightweight, and run smoother than butter on a hot SSD.
-
-💻 Whether you're a power user, a rice addict, or just someone who wants their desktop to *look like the mainframe from a cyberpunk movie*, Blurspace delivers.
-
----
-
-## ✨ Features
-
-- 🧬 **Glass-Like Transparency** (with picom)
-- 🎯 **Snappy i3WM Setup**
-- 🎨 **Custom i3bar / Polybar integration**
-- ⚡ **Super fast boot + lightweight AF**
-- 🌙 **Dark mode supremacy**
-- 🖱️ Rofi launcher with blur-enabled theme
-- 🧠 Nerd Fonts + Cool ASCII login banners
-- 📦 Optional theming for: `neofetch`, `dmenu`, `zsh`, `vim`, `GTK`
-
----
-
-## 🛠️ Technologies Used
-
-| Tool | Purpose |
-|------|---------|
-| `i3wm` | Window manager |
-| `picom` | Transparency & blur |
-| `rofi` | Application launcher |
-| `feh` | Wallpaper setting |
-| `dmenu` | Classic menu launcher |
-| `nerd-fonts` | Iconic font styling |
-| `zsh + oh-my-zsh` | Shell customization |
+| Component   | Description                       |
+|------------|-----------------------------------|
+| `i3wm`      | Tiling window manager             |
+| `picom`     | Compositor with blur/transparency |
+| `rofi`      | Application launcher              |
+| `feh`       | Wallpaper setter                  |
+| `zsh`       | Custom shell (optional)           |
+| `nerd-fonts`| Icon support                      |
+| `vim`       | Themed editor (optional)          |
 
 ---
 
 ## 🚀 Installation
 
-> ⚠️ Blurspace assumes you know your way around a Linux terminal.  
-> Recommended base: **Arch Linux**, but feel free to tweak it for any distro.
+> ⚠️ Recommended for Arch Linux or Arch-based distributions.  
+> Manual review of the install script is advised before execution.
 
 ```bash
 git clone https://github.com/codedloki/Blurspace.git
 cd Blurspace
 chmod +x install.sh
-sudo ./setup
+./install.sh
