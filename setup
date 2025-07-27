@@ -1,0 +1,119 @@
+#!/bin/bash
+
+banner() {
+    echo -e "\n\e[0;32m"
+
+    # Define banner lines
+    banner_lines=(
+
+"░████████   ░██                       ░██████                                                         "
+"░██    ░██  ░██                      ░██   ░██                                                        "
+"░██    ░██  ░██ ░██    ░██ ░██░████ ░██         ░████████   ░██████    ░███████   ░███████            "
+"░████████   ░██ ░██    ░██ ░███      ░████████  ░██    ░██       ░██  ░██    ░██ ░██    ░██ 	  "
+"░██     ░██ ░██ ░██    ░██ ░██              ░██ ░██    ░██  ░███████  ░██        ░█████████           "
+"░██     ░██ ░██ ░██   ░███ ░██       ░██   ░██  ░███   ░██ ░██   ░██  ░██    ░██ ░██                  "
+"░█████████  ░██  ░█████░██ ░██        ░██████   ░██░█████   ░█████░██  ░███████   ░███████            "
+"                                                ░██                                                   "
+"                                                ░██                                                   "
+"                                                                                      @codedloki     "
+    )
+
+    # Determine the length of the longest line
+    max_length=0
+    for line in "${banner_lines[@]}"; do
+        [[ ${#line} -gt $max_length ]] && max_length=${#line}
+    done
+
+    # Print top border
+    echo -e "\e[1;32m╔"$(printf '═%.0s' $(seq 1 $((max_length + 2))))"╗"
+
+    # Print banner lines with side borders
+    for line in "${banner_lines[@]}"; do
+        printf "\e[1;32m║ \e[0m%-*s\e[1;34m ║\e[0m\n" "$max_length" "$line"
+    done
+
+    # Print bottom border
+    echo -e "\e[1;32m╚"$(printf '═%.0s' $(seq 1 $((max_length + 2))))"╝\e[0m"
+    echo -e "\n"
+}
+
+#echo -e "\e[0;32m"
+banner | lolcat
+
+startinstall() {
+	user=$(gum choose $(ls /home/) )
+
+    echo -e "\e[1;34m📦 Installing configs for user: $user\e[0m"
+    
+    # Copy safely with checks
+    [[ -d "alacritty" ]] && cp -r alacritty/  /home/$user/.config/
+    [[ -d "i3" ]]        && cp -r i3/         /home/$user/.config/
+    [[ -d "picom" ]]     && cp -r picom/       /home/$user/.config/
+    [[ -f "iggy.rasi" ]]      && cp  iggy.rasi /usr/share/rofi/themes/
+    [[ -f "iggy.jpg" ]]  && cp  iggy.jpg /usr/share/rofi/themes/ 
+
+
+    echo -e "\e[1;32m✅ Configs installed successfully!\e[0m"
+}
+
+
+conditioning(){
+	if  command -v gum  >/dev/null 2>&1; then
+#	echo -e "\e[0;32m Gum Installed \e[0;0m"
+	if command -v picom >/dev/null 2>&1;then
+#		echo -e "\e[0;32mPicom Installed \e[0;0m"
+		if command -v rofi > /dev/null 2>&1;then
+#  		  echo -e "\e[0;32m Rofi Installed \e[0;0m"
+		  if command -v alacritty > /dev/null 2>&1;then
+#			  echo -e "\e[0;32m Alacritty is installed\e[0;0m"
+			  echo -e "$(gum style \
+  --border normal \
+  --margin "1 10" \
+  --padding "1 5" \
+  --border-foreground 212 \
+  "📦 Installed Tools:
+🔍 Gum
+💣 Picom
+🕷  Rofi
+📡 Alacrity")"
+startinstall 
+gum spin sleep 5  --title="Setting up" 
+
+
+		   else
+			   echo "\e[0;31m Alacritty not installed"
+		  fi
+
+		else
+		    echo "Rofi Not Installed"
+		fi
+	else
+		echo "Picom is not installed"
+	fi
+	
+else
+    echo "Installing following packages:"
+    echo "Gum is not installed ❌"
+fi
+}
+
+
+
+
+
+
+
+gum spin sleep 2 --title="Checking for root "
+
+
+
+if [ $(id -u ) -eq 0 ];then
+#	echo "You are root"
+	conditioning
+else
+	echo -e "\e[1;31m Root Access required"
+fi 
+
+
+
+
