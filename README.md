@@ -59,4 +59,4 @@ Designed to look slick, feel lightweight, and run smoother than butter on a hot 
 git clone https://github.com/codedloki/Blurspace.git
 cd Blurspace
 chmod +x install.sh
-./install.sh
+sudo ./setup
